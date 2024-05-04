@@ -108,4 +108,25 @@ void deleteNode()
 		return;
 	}
 
-	
+	if (current == START)
+	{
+		START = START->next;
+		if (current != NULL)
+		{
+			START->prev = NULL;
+		}
+	}
+
+	else
+	{
+		previous->next = current->next;
+		if (current->next != NULL)
+		{
+			current->next->prev = previous;
+		}
+	}
+
+	delete current;
+	cout << "\1b[32mRecord with roll number " << rollNo << " deleted\x1b[0m" << endl;
+}
+
